@@ -3,11 +3,26 @@ const app = createApp({
     data () {
         return {
             todos:[
-            ' Visitare Argentina ',
-            ' Visitare il Brasile ',
-            ' Visitare la Germania',
-            ' Non visitare la francia ',
-            ' Non visitare la Svezia',
+            {
+                text:' Visitare Argentina ',
+                done: true
+            },
+            {
+                text:' Visitare il Brasile ',
+                done: true
+            },
+            {
+                text:' Visitare la Germania',
+                done: true
+            },
+            {
+                text:' Non visitare la francia ',
+                done: false
+            },
+            {
+                text:' Non visitare la Svezia',
+                done: false
+            },
             ],
             newTodo: ''
         };
@@ -16,12 +31,12 @@ const app = createApp({
         addTodo(){
             const cleanTodo = this.newTodo.trim();
             if (cleanTodo != '') {
-                this.todos.push(cleanTodo);
+                this.todos.push({text:cleanTodo});
                 this.newTodo = '';
             }
         },
         removeTodo(i) {
-            this.todos.slice(i, 1);
-        }
+            this.todos.splice(i, 1);
+        },
     }
 }).mount('#app');
