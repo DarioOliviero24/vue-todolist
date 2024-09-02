@@ -29,11 +29,17 @@
                 AGGIUNGI
             </button>
         </div>
-
-
     </header>
     <!--Main-->
     <main>
+        <div class="container">
+            <ul>
+                <li v-for="(todo, index) in todos">
+                    {{ todo }}
+                </li>
+                <button @click="removetodo(index)">X</button>
+            </ul>
+        </div>
 
     </main>
 
